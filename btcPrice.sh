@@ -70,8 +70,7 @@ done; echo
 
 # main
 
-
-if [ $(id -u) -eq 0 ]; then
+#if [ $(id -u) -eq 0 ]; then
 
 	dependencies
 
@@ -83,8 +82,8 @@ if [ $(id -u) -eq 0 ]; then
 		echo -e "\n${red}[x]${end} Tienes un problema de red y no se ha podido cargar la cotización de Bitcoin."
 	fi
 
-else
-	echo -e "\n${red}[ERROR]${end} Debes ejecutar el script como root"; sleep 1
-	exit 1
+#else
+#	echo -e "\n${red}[ERROR]${end} Debes ejecutar el script como root"; sleep 1
+#	exit 1
 
-fi
+#fi
