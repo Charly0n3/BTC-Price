@@ -17,7 +17,9 @@ gray="\e[0;37m\033[1m"
 end="\033[0m\e[0m"
 
 
-# Función dependencias
+# Función dependencias, comprueba en un bucle si los programas almacenados en el array están en el sistema
+# en caso de no estar, avisa al usuario y los instala, en caso de no tener conectividad avisa al usuario.
+
 
 dependencies() {
         dep=(curl jq)
@@ -42,7 +44,8 @@ dependencies() {
         done
 }
 
-# Precio
+# Función precio, esta función se conecta a la api de coindesk, y filtra el formato json con jq para sacar solo el precio de bitcoin,
+# además añadí la fecha actual.
 
 price() {
 date=$(date +%d/%m/%y)
@@ -68,7 +71,8 @@ done; echo
 
 }
 
-# main
+# main, en primer lugar ejecutamos la función dependencias. después comprueba si hay conectividad de nuevo (Aun que no haría falta ya que en dependencias controlamos esto).
+# Si hay conectividad enseña el precio, si no avisa de que hay un problema.
 
 #if [ $(id -u) -eq 0 ]; then
 
