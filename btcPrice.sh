@@ -1,9 +1,7 @@
 #/bin/bash
 #Autor -> Charly0n3
 #Funcionamiento -> Busca en la api de coindesk el precio de bitcoin en euros usando curl para la petición y jq para el formateo de los datos en formato json y lo imprime junto a la fecha actual en tiempo real.
-#Nota -> Necesitarás conexión a internet para que se pueda enviar la petición a la api
-
-
+#Nota -> Necesitarás conexión a internet para que se pueda realizar la petición a la api
 
 # Colores
 
@@ -16,10 +14,8 @@ turquoise="\e[0;36m\033[1m"
 gray="\e[0;37m\033[1m"
 end="\033[0m\e[0m"
 
-
 # Función dependencias, comprueba en un bucle si los programas almacenados en el array están en el sistema
 # en caso de no estar, avisa al usuario y los instala, en caso de no tener conectividad avisa al usuario.
-
 
 dependencies() {
         dep=(curl jq)
@@ -72,7 +68,7 @@ done; echo
 }
 
 # main, en primer lugar ejecutamos la función dependencias. después comprueba si hay conectividad de nuevo (Aun que no haría falta ya que en dependencias controlamos esto).
-# Si hay conectividad enseña el precio, si no avisa de que hay un problema.
+# Si hay conectividad enseña el precio, si no, avisa de que hay un problema, comenté el condicional que controla que se ejecute el script como root ya que no hace ninguna falta.
 
 #if [ $(id -u) -eq 0 ]; then
 
